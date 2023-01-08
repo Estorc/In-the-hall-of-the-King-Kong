@@ -47,7 +47,7 @@ module.exports = {
 					if (_this.animt == 999) {
 						_this.animt = 0; 
 
-						params = [80, ".finalFlash", 0, 0, 0, 0, 100, 100, 0, 0]
+						params = [80, "finalFlash", 0, 0, 0, 0, 100, 100, 0, 0]
 						
 						point = Game_Interpreter.prototype.picturePoint.call(null, params);
 						// prettier-ignore
@@ -109,7 +109,7 @@ module.exports = {
 					
 					_this.child.child.collision = [{}];
 					_this.end = true;
-					params = [90, ".finalFlash2", 0, 0, 0, 0, 100, 100, 0, 0]
+					params = [90, "finalFlash2", 0, 0, 0, 0, 100, 100, 0, 0]
 					
 					point = Game_Interpreter.prototype.picturePoint.call(null, params);
 					// prettier-ignore
