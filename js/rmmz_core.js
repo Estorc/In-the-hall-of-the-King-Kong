@@ -984,7 +984,7 @@ Graphics._onKeyDown = function(event) {
 					}
 				}
 				
-				BattleManager.setup(141, true, false);
+				BattleManager.setup(172, true, false);
 				BattleManager.setBattleTest(true);
 				BattleManager.playBattleBgm();
 				SceneManager.goto(Scene_Battle);
