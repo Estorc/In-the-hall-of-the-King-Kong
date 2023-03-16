@@ -150,6 +150,7 @@ load (thisTurn, _this, skillParam) {
 		if (!Input.isPressed("up") && !Input.isPressed("ok")) {
 			
 			_this.soulHasJump = 0;
+			_this.soulJumpPower = Math.min(3,_this.soulJumpPower);
 			
 		}
 
@@ -341,31 +342,12 @@ load (thisTurn, _this, skillParam) {
 			
 			if (_this.ppg_attackPaternID == 100) {
 				
-				$gameBulletHell.TruckPursuit = 0;
-				$gameBulletHell.ppg_action = 0;
-				$gameBulletHell.ppg_stop = 0;
-				$gameBulletHell.soulGravity = 0;
-				$gameBulletHell.soulJumpPower = 0;
-				$gameBulletHell.objects = [];
-				$gameBulletHell.active = false;
-				$gameBulletHell.modifier = 1;
-				$gameBulletHell.randomizer = 0;
-				$gameBulletHell.showPictureBellow = 0;
-				
-				DataManager.createGameObjects();
-			
-				$gameParty._actors = [];
-				for (const actorId of $dataSystem.partyMembers) {
-					if ($gameActors.actor(actorId)) {
-						$gameParty._actors.push(actorId);
-					}
+				if (BattleManager.isBattleTest()) {
+					AudioManager.stopBgm();
+					SceneManager.exit();
+				} else {
+					SceneManager.pop();
 				}
-				
-				BattleManager.setup(172, true, false);
-				BattleManager.setBattleTest(true);
-				BattleManager.playBattleBgm();
-				SceneManager.goto(Scene_Battle);
-				$gameScreen._tone = [-256,-256,-256,0]
 				
 			} else {
 				

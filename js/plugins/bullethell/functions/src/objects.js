@@ -370,6 +370,12 @@
 		return (Math.atan2(this.direction.y,this.direction.x) * 180 / Math.PI)
 	
 	}
+	
+	BulletHellObject.prototype.changeDirection = function(dir,isCircle) {
+	
+		this.direction = this.initDir(dir,isCircle);
+	
+	}
 
 	BulletHellObject.prototype.initDir = function(dir, isCircle) {
 		
